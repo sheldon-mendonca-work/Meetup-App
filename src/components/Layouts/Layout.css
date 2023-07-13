@@ -1,0 +1,72 @@
+main{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.heading2{
+    padding: 1rem;
+    transition: all 0.2s;
+    margin: 0;
+    font-size: 2rem;
+}
+
+
+.layoutHeading{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    align-items: center;
+}
+
+.layoutHeading>div{
+    display: flex;
+    cursor: pointer;
+}
+
+.heading1{
+    font-size: 3rem;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.heading1:hover{
+    transform: translateY(-2px);
+    background-color: rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+.layoutHeading-svg{
+    height: 2rem;
+    padding: 1rem;
+}
+
+.layoutHeading-svg:hover{
+    background-color: rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+.default-btn{
+    color: white;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: rgb(238,79,95);
+    border: none;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+}
+
+.default-btn:hover{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    transform: translateY(-3px);
+}
+
+.default-btn:active{
+    transform: translateY(0);
+}
+
+.default-btn-active{
+    opacity: 1;
+}

@@ -1,0 +1,15 @@
+.singleevent{
+    padding: 2rem;
+}
+
+.singleevent-title>h2{
+    font-size: 2.5rem;
+}
+
+
+.singleevent-postTag{
+    background-color: blue;
+    color: white;
+    padding: 2px 1rem;
+    border-radius: 10rem;
+}
