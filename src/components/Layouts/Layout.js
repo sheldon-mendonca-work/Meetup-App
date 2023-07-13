@@ -8,14 +8,13 @@ const Layout = ({children}) => {
     const navigate = useNavigate();
     
     const locationType = location.pathname.split('/')[1];
-
     return <>
     <div className='layoutHeading'>
         <div>
         { locationType !== "" && <LeftArrowIcon className="layoutHeading-svg" onClick={()=>navigate(-1)} />}
         <h1 className='heading1' onClick={()=>navigate('/')}>Meetup</h1>
         </div>
-        <SearchBar placeholder="Search by event, title or tags." />
+        {location.pathname === '/' && <SearchBar placeholder="Search by event, title or tags." />}
     </div>
     <main>
         {children}
