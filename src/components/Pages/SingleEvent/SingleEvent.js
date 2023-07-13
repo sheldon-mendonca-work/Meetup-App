@@ -8,7 +8,7 @@ import AddPage from "../AddPage/AddPage";
 const SingleEvent = () => {
     const { meetId } = useParams();
     const navigate = useNavigate();
-    const { meetupData, showModal, setShowModal } = useContext(MeetupContext);
+    const { meetupData, showModal, setShowModal, rsvpEvent } = useContext(MeetupContext);
     
     const currMeet = meetupData.find(item => item.id === meetId);
 
@@ -61,18 +61,18 @@ const SingleEvent = () => {
             <div>
                 <div>
                     <div>
-                        <span>ClockIcon</span>
+                        <span>Time: </span>
                         <span>{eventStartDateString} at {eventStartTimeString} to {eventEndDateString} at {eventEndTimeString}</span>
                     </div>
                     <div>
-                        <span>ClockIcon</span>
+                        <span>Location: </span>
                         <span>
                             <span>{currMeet.location}</span>
                             <span>{currMeet.address}</span>
                         </span>
                     </div>
                     {currMeet.isPaid && <div>
-                        <span>RupeeIcon</span>
+                        <span>Price (INR):</span>
                         <span>{currMeet.price}</span>
                     </div>}
                 </div>
@@ -88,7 +88,8 @@ const SingleEvent = () => {
                         ))}
                     </div>
                 </div>
-                {eventStarted && <button onClick={rsvpClickHandler}>RSVP</button>}
+                {eventStarted && !rsvpEvent[currMeet.id] && <button onClick={rsvpClickHandler}>RSVP</button>}
+                {eventStarted && rsvpEvent[currMeet.id] && <button>Already RSVPed...</button>}
             </div>
         </div>
         { showModal && <AddPage eventId={currMeet.id}/>}
